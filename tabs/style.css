@@ -1,0 +1,101 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+  /* ========== BASE ========== */
+  --bg-main: #F7F8FA;        /* overall page bg */
+  --bg-card: #FFFFFF;       /* container bg */
+  --bg-tab: #F1F3F5;        /* inactive tab bg */
+
+  /* ========== TEXT ========== */
+  --text-primary: #1F2937;  /* dark gray (not pure black) */
+  --text-secondary: #6B7280;
+
+  /* ========== BORDER ========== */
+  --border: #E5E7EB;
+
+  /* ========== ACCENT (soft orange system) ========== */
+  --orange-light: #FFF4EC;   /* subtle bg tint */
+  --orange-mid: #FDBA74;     /* hover */
+  --orange-bright: #F97316;  /* active tab */
+  --orange-deep: #EA580C;    /* strong state */
+
+  /* ACTIVE ACCENT */
+  --accent: var(--orange-bright);
+
+  /* ========== STATES ========== */
+  --hover-bg: var(--orange-light);
+  --active-bg: #FFFFFF;
+
+  --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.06);
+  --shadow-active: 0 6px 25px rgba(249, 115, 22, 0.15);
+
+  /* ========== UI ========== */
+  --radius: 10px;
+  --transition: all 0.25s ease;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+  background: var(--bg-main);
+  color: var(--text-primary);
+  font-family: sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
+  padding: 20px;
+  height: 70vh;
+  width: 65vw;
+}
+
+.tabs-header {
+  display: flex;
+  gap: 10px;
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+  border-bottom: 2px solid var(--border);
+}
+
+.tab-head {
+  background: var(--bg-tab);
+  padding: 10px 18px;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: var(--transition);
+  user-select: none;
+}
+
+.tab-head:hover {
+  background: var(--hover-bg);
+}
+
+.tab-head.active {
+  background: var(--accent);
+  color: #fff;
+  box-shadow: var(--shadow-active);
+}
+
+.tab {
+  display: none;
+  background: var(--orange-light);
+  padding: 15px;
+  border-radius: var(--radius);
+}
+
+.tab.active {
+  display: block;
+}
