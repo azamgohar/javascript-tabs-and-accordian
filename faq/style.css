@@ -1,0 +1,112 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+  /* ========== BASE ========== */
+  --bg-main: #0D0D0D;
+  --bg-card: #1A1A1A;
+  --border: #2A2A2A;
+
+  /* ========== TEXT ========== */
+  --text-primary: #EAEAEA;
+  --text-secondary: #A0A0A0;
+
+  /* ========== ORANGE SYSTEM ========== */
+  --orange-dark: #2A1408;     /* subtle dark orange (inner bg) */
+  --orange-mid: #5A2E0C;      /* hover / soft highlight */
+  --orange-bright: #FF7A00;   /* active / main accent */
+  --orange-glow: rgba(255, 122, 0, 0.35);
+
+    --accent-cyan: #00F5D4;
+  --accent-yellow: #FFD60A;
+  --accent-purple: #8B5CF6;
+
+  /* ACTIVE ACCENT */
+  --accent: var(--orange-bright);
+
+  /* ========== STATES ========== */
+  --hover: var(--orange-mid);
+  --shadow-glow: 0 0 20px var(--orange-glow);
+
+  /* ========== UI ========== */
+  --radius: 12px;
+  --transition: all 0.3s ease;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+.main {
+    height: 100vh;
+    width: 100%;
+    background: var(--bg-main);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.faq {
+    height: 75vh;
+    width: 65vw;
+    background: var(--bg-card);
+    border: 2px solid var(--border);
+    box-shadow: 0px 0px 30px var(--border);
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding: 35px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.heading {
+    height: 5vh;
+    background: linear-gradient(160deg, #8B5CF6, #00F5D4, #FFD60A);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: sans-serif;
+}
+
+.item {
+    height: 10.5vh;
+    border: 2px solid var(--orange-bright);
+    padding: 25px 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    overflow: hidden;
+}
+
+.item .question {
+    /* background: red; */
+    font-family: 'Courier New', Courier, monospace;
+    color: white;
+    text-shadow: 0px 0px 20px var(--orange-bright);
+    display: flex;
+    justify-content: space-between;
+    user-select: none;
+    cursor: pointer;
+}
+.item .answer {
+    /* background: red; */
+    font-family: cursive;
+    color: rgb(216, 216, 216);
+}
+
+.item.active {
+    height: fit-content;
+    box-shadow: inset 0px 0px 30px #ff7b0031;
+}
+
+.item.active .question{
+    user-select: auto;
+}
